@@ -6,8 +6,13 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var special = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
+var slider = document.getElementById("passLength");
+var output = document.getElementById("current");
+output.innerHTML = slider.value; // Display the default slider value
 
-
+slider.oninput = function () {
+  output.innerHTML = this.value;
+}
 
 
 
