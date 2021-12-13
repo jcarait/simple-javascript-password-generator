@@ -11,8 +11,10 @@ var output = document.getElementById("current");
 output.innerHTML = slider.value; // Display the default slider value
 
 slider.oninput = function () {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value; // Display current value based on slider position
 }
+
+
 
 
 
