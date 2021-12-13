@@ -10,11 +10,44 @@ var slider = document.getElementById("passLength");
 var output = document.getElementById("current");
 output.innerHTML = slider.value; // Display the default slider value
 
-slider.oninput = function () {
-  output.innerHTML = this.value; // Display current value based on slider position
+var checkUpperCase = document.getElementById("upper-case");
+var checkLowerCase = document.getElementById("lower-case");
+var checkSpecial = document.getElementById("special");
+
+var current = function () {
+  output.innerHTML = this.value;
 }
 
+slider.addEventListener ("input", current);
 
+var length = parseInt(slider.value); //store current desired password length based on slider position
+
+console.log(length);
+
+
+checkUpperCase.addEventListener("change", function() {
+  if (this.checked) {
+      console.log("Upper case is checked");
+  } else {
+      console.log("upper case is not checked");
+  }
+});
+
+checkLowerCase.addEventListener("change", function() {
+  if (this.checked) {
+      console.log("lower case is checked");
+  } else {
+      console.log("lower case is not checked");
+  }
+});
+
+checkSpecial.addEventListener("change", function() {
+  if (this.checked) {
+      console.log("special case is checked");
+  } else {
+      console.log("special case is not checked");
+  }
+});
 
 
 
