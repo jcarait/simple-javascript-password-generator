@@ -38,16 +38,16 @@ checkLowerCase.addEventListener("change", function() {
 
 checkSpecial.addEventListener("change", function() {
   if (this.checked) {
-      console.log("special case is checked");
+        checkSpecial.value = true;
   } else {
-      console.log("special case is not checked");
+        return false;
   }
 });
 
 var length = parseInt(slider.value); //store current desired password length based on slider position
 
-function userPreference() {
-  isValid = false;
+// function userPreference() {
+//   isValid = false;
 
 var selection = {
   length: parseInt(slider.value),
@@ -56,18 +56,30 @@ var selection = {
   special: checkSpecial.checked
 }
 
+
+
 console.log(selection);
 
-if (!upperCase || !lowerCase || !special) {
-    alert("You must select at least one checkbox for password to be generated!")
-} else {
-  isValid = true
+function generatePassword() {
+  var password = selection;
+  var combinations = [];
+  var output = "";
 
+  if ( !password.upperCase.checked && !password.lowerCase.checked && !password.special.checked ) {
+    alert("Please select at least one checkbox to generate password");
+  } else {
+    console.log("Generating Password");
+  }
 }
-return selection;
-}
 
+// if (!upperCase || !lowerCase || !special) {
+//     alert("You must select at least one checkbox for password to be generated!")
+// } else {
+//   isValid = true
 
+// }
+// return selection;
+// }
 
 
 
