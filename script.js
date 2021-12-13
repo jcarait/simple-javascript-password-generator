@@ -20,11 +20,6 @@ var current = function () {
 
 slider.addEventListener ("input", current);
 
-var length = parseInt(slider.value); //store current desired password length based on slider position
-
-console.log(length);
-
-
 checkUpperCase.addEventListener("change", function() {
   if (this.checked) {
       console.log("Upper case is checked");
@@ -48,6 +43,18 @@ checkSpecial.addEventListener("change", function() {
       console.log("special case is not checked");
   }
 });
+
+var length = parseInt(slider.value); //store current desired password length based on slider position
+
+var selection = {
+  length: parseInt(slider.value),
+  upperCase: checkUpperCase.checked,
+  lowerCase: checkLowerCase.checked,
+  special: checkSpecial.checked
+}
+console.log(selection);
+
+
 
 
 
