@@ -46,13 +46,28 @@ checkSpecial.addEventListener("change", function() {
 
 var length = parseInt(slider.value); //store current desired password length based on slider position
 
+function userPreference() {
+  isValid = false;
+
 var selection = {
   length: parseInt(slider.value),
   upperCase: checkUpperCase.checked,
   lowerCase: checkLowerCase.checked,
   special: checkSpecial.checked
 }
+
 console.log(selection);
+
+if (!upperCase || !lowerCase || !special) {
+    alert("You must select at least one checkbox for password to be generated!")
+} else {
+  isValid = true
+
+}
+return selection;
+}
+
+
 
 
 
