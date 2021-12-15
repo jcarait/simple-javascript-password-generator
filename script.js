@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 var alphabetCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
 var numericalCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"];
-var upperCaseAlpabetCharacters = alphabetCharacters.map(function(x){return x.toUpperCase()});
+var upperCaseAlpabetCharacters = alphabetCharacters.map(function (x) { return x.toUpperCase() });
 
 console.log(upperCaseAlpabetCharacters);
 
@@ -21,29 +21,29 @@ var current = function () {
   output.innerHTML = this.value;
 }
 
-slider.addEventListener ("input", current);
+slider.addEventListener("input", current);
 
-checkUpperCase.addEventListener("change", function() {
+checkUpperCase.addEventListener("change", function () {
   if (this.checked) {
-      console.log("Upper case is checked");
+    console.log("Upper case is checked");
   } else {
-      console.log("upper case is not checked");
+    console.log("upper case is not checked");
   }
 });
 
-checkLowerCase.addEventListener("change", function() {
+checkLowerCase.addEventListener("change", function () {
   if (this.checked) {
-      console.log("lower case is checked");
+    console.log("lower case is checked");
   } else {
-      console.log("lower case is not checked");
+    console.log("lower case is not checked");
   }
 });
 
-checkSpecial.addEventListener("change", function() {
+checkSpecial.addEventListener("change", function () {
   if (this.checked) {
-        checkSpecial.value = true;
+    checkSpecial.value = true;
   } else {
-        return false;
+    return false;
   }
 });
 
@@ -61,22 +61,33 @@ var selection = {
 console.log(selection);
 
 function generatePassword() {
-  var password = selection;
-  var combinations = [];
+  var userChoice = [];
   var output = "";
 
-  if ( !password.upperCase.checked && !password.lowerCase.checked && !password.special.checked) {
+  if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
   } else {
     console.log("Generating Password");
   }
 
-  // if ( password.upperCase.checked && !password.lowerCase.checked && !password.special.checked) {
+  if (selection.upperCase.checked && !selection.lowerCase.checked && !selection.special.checked) {
 
-  // }
+    userChoice.push(upperCaseAlpabetCharacters);
+    console.log(userChoice);
+  } else if (!selection.upperCase.checked && selection.lowerCase.checked && !selection.special.checked) {
 
+    userChoice.push(alphabetCharacters);
+    console.log(userChoice);
+  } else if (!selection.upperCase.checked && !selection.lowerCase.checked && selection.special.checked) {
+
+    userChoice.push(specialCharacters);
+    console.log(userChoice);
+  } else if (selection.upperCase.checked && selection.lowerCase.checked && !selection.special.checked) {
+
+    userChoice.push(alphabetCharacters, upperCaseAlpabetCharacters);
+    console.log(userChoice);
+  }
 }
-
 
 
 
