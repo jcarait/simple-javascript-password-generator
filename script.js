@@ -7,8 +7,6 @@ var numericalCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"];
 var upperCaseAlpabetCharacters = alphabetCharacters.map(function (x) { return x.toUpperCase() });
 
-console.log(upperCaseAlpabetCharacters);
-
 var slider = document.getElementById("passLength");
 var output = document.getElementById("current");
 output.innerHTML = slider.value; // Display the default slider value
@@ -24,42 +22,6 @@ var current = function () {
 
 slider.addEventListener("input", current);
 
-
-checkUpperCase.addEventListener("change", function () {
-  if (this.checked) {
-    console.log("Upper case is checked");
-  } else {
-    console.log("upper case is not checked");
-  }
-});
-
-checkLowerCase.addEventListener("change", function () {
-  if (this.checked) {
-    console.log("lower case is checked");
-  } else {
-    console.log("lower case is not checked");
-  }
-});
-
-checkNumerical.addEventListener("change", function () {
-  if (this.checked) {
-    console.log("numerical is checked");
-  } else {
-    console.log("numerical is not checked");
-  }
-});
-
-checkSpecial.addEventListener("change", function () {
-  if (this.checked) {
-    console.log("special is checked");
-  } else if (!this.checked) {
-    console.log("special is not checked");
-  }
-    else {
-    return false;
-  }
-});
-
 var desiredLength = parseInt(slider.value); //store current desired password length based on slider position.
 
 var selection = {
@@ -69,45 +31,43 @@ var selection = {
   special: checkSpecial
 };
 
-
-
-console.log(selection);
-
 function generatePassword() {
   var userChoice
   var tempChoice = [];
   var desiredLength = parseInt(slider.value);
   var finalLength
 
+
+//Included a reduction to length of password since one of each criteria will be added to final array of characters
   if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
   } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked && selection.special.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters, specialCharacters);
-    console.log(userChoice);
-  } else  if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked) {
+    finalLength = desiredLength - 4; 
+  } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters);
-    console.log(userChoice);
+    finalLength = desiredLength - 3;
   } else if (selection.upperCase.checked && selection.lowerCase.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters);
-    console.log(userChoice);
+    finalLength = desiredLength - 2;
   } else if (selection.upperCase.checked) {
 
     userChoice = upperCaseAlpabetCharacters;
-    console.log(userChoice);
+    finalLength = desiredLength - 1;
   } else if (selection.lowerCase.checked) {
 
     userChoice = alphabetCharacters;
-    console.log(userChoice);
+    finalLength = desiredLength - 1;
   } else if (selection.numerical.checked) {
-    
+
     userChoice = numericalCharacters;
-    console.log(userChoice);
+    finalLength = desiredLength - 1;
   } else {
     userChoice = specialCharacters;
-    console.log(userChoice);
+    finalLength = desiredLength - 1;
   };
 
 
@@ -115,27 +75,25 @@ function generatePassword() {
   if (selection.upperCase.checked) {
     var minIndex = getRandomInt(upperCaseAlpabetCharacters.length - 1);
     var singleIndex = upperCaseAlpabetCharacters[minIndex]
-      tempChoice.push(singleIndex);
-      finalLength = desiredLength - 1;
+    tempChoice.push(singleIndex);
   }
 
   if (selection.lowerCase.checked) {
     var minIndex = getRandomInt(alphabetCharacters.length - 1);
     var singleIndex = alphabetCharacters[minIndex];
-      tempChoice.push(singleIndex);
-      finalLength = desiredLength - 1;
+    tempChoice.push(singleIndex);
+
   }
-  if (selection.upperCase.checked) {
+  if (selection.numerical.checked) {
+
     var minIndex = getRandomInt(numericalCharacters.length - 1);
     var singleIndex = numericalCharacters[minIndex]
-      tempChoice.push(singleIndex);
-      finalLength = desiredLength - 1;
+    tempChoice.push(singleIndex);
   }
-  if (selection.upperCase.checked) {
+  if (selection.special.checked) {
     var minIndex = getRandomInt(specialCharacters.length - 1);
     var singleIndex = specialCharacters[minIndex]
-      tempChoice.push(singleIndex);
-      finalLength = desiredLength - 1;
+    tempChoice.push(singleIndex);
   }
 
 
@@ -146,27 +104,28 @@ function generatePassword() {
   for (var i = 0; i < finalLength; i++) {
     var choiceIndex = getRandomInt(userChoice.length - 1);
     var randomIndex = userChoice[choiceIndex];
-      tempChoice.push(randomIndex);
+    tempChoice.push(randomIndex);
   }
 
-  function shuffle(array) { // Fisher-Yates Javascirpt Shuffle - used on final array to randomise and create a strong password
-    let currentIndex = array.length,  randomIndex;
-  
+ // Fisher-Yates Javascirpt Shuffle - used on final array to randomise and create a strong password
+  function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
 
     while (currentIndex != 0) {
-  
+
 
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
+
 
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-  
+
     return array;
   }
-  
+
   shuffle(tempChoice);
 
   password = tempChoice.join('');
@@ -174,11 +133,6 @@ function generatePassword() {
   return password;
 
 }
-
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
