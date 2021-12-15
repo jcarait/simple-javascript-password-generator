@@ -51,8 +51,11 @@ checkNumerical.addEventListener("change", function () {
 
 checkSpecial.addEventListener("change", function () {
   if (this.checked) {
-    checkSpecial.value = true;
-  } else {
+    console.log("special is checked");
+  } else if (!this.checked) {
+    console.log("special is not checked");
+  }
+    else {
     return false;
   }
 });
