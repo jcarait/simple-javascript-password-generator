@@ -76,25 +76,32 @@ function generatePassword() {
 
   if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
-  } else {
-    console.log("Generating Password");
-  }
-
-  if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked && selection.special.checked) {
+  } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked && selection.special.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters, specialCharacters);
     console.log(userChoice);
-  } else if (!selection.upperCase.checked && selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
+  } else  if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked) {
 
-    userChoice.push(alphabetCharacters);
+    userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters);
     console.log(userChoice);
-  } else if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && selection.special.checked) {
+  } else if (selection.upperCase.checked && selection.lowerCase.checked) {
 
-    userChoice.push(specialCharacters);
+    userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters);
     console.log(userChoice);
-  } else if (selection.upperCase.checked && selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
+  } else if (selection.upperCase.checked) {
 
-    userChoice.push(alphabetCharacters, upperCaseAlpabetCharacters);
+    userChoice = upperCaseAlpabetCharacters;
+    console.log(userChoice);
+  } else if (selection.lowerCase.checked) {
+
+    userChoice = alphabetCharacters;
+    console.log(userChoice);
+  } else if (selection.numerical.checked) {
+    
+    userChoice = numericalCharacters;
+    console.log(userChoice);
+  } else {
+    userChoice = specialCharacters;
     console.log(userChoice);
   }
 }
