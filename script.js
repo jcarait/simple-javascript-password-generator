@@ -111,10 +111,8 @@ function generatePassword() {
     return Math.floor(Math.random() * max);
   };
 
-  choiceIndex = getRandomInt(userChoice.length - 1);
-  
-
   for (var i = 0; i < desiredLength; i++) {
+    choiceIndex = getRandomInt(userChoice.length - 1);
     randomIndex = userChoice[choiceIndex];
       tempChoice.push(randomIndex);
   }
