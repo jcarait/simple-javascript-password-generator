@@ -15,6 +15,7 @@ output.innerHTML = slider.value; // Display the default slider value
 
 var checkUpperCase = document.getElementById("upper-case");
 var checkLowerCase = document.getElementById("lower-case");
+var checkNumerical = document.getElementById("numerical");
 var checkSpecial = document.getElementById("special");
 
 var current = function () {
@@ -39,6 +40,14 @@ checkLowerCase.addEventListener("change", function () {
   }
 });
 
+checkNumerical.addEventListener("change", function () {
+  if (this.checked) {
+    console.log("numerical is checked");
+  } else {
+    console.log("numerical is not checked");
+  }
+});
+
 checkSpecial.addEventListener("change", function () {
   if (this.checked) {
     checkSpecial.value = true;
@@ -53,6 +62,7 @@ var selection = {
   length: parseInt(slider.value),
   upperCase: checkUpperCase,
   lowerCase: checkLowerCase,
+  numerical: checkNumerical,
   special: checkSpecial
 }
 
@@ -64,7 +74,7 @@ function generatePassword() {
   var userChoice = [];
   var output = "";
 
-  if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.special.checked) {
+  if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
   } else {
     console.log("Generating Password");
