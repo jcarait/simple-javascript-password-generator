@@ -117,7 +117,10 @@ function generatePassword() {
       tempChoice.push(randomIndex);
   }
 
-  console.log(tempChoice);
+  password = tempChoice.join('');
+
+  return password;
+
 }
 
 
