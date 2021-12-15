@@ -76,8 +76,8 @@ console.log(selection);
 function generatePassword() {
   var userChoice
   var tempChoice = [];
-  var output = "";
-  var desiredLength = parseInt(slider.value); 
+  var desiredLength = parseInt(slider.value);
+  var finalLength
 
   if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
@@ -110,15 +110,64 @@ function generatePassword() {
     console.log(userChoice);
   };
 
+
+  // push 1 random element from array based on user password criteria to guarantee at least of the desired character
+  if (selection.upperCase.checked) {
+    var minIndex = getRandomInt(upperCaseAlpabetCharacters.length - 1);
+    var singleIndex = upperCaseAlpabetCharacters[minIndex]
+      tempChoice.push(singleIndex);
+      finalLength = desiredLength - 1;
+  }
+
+  if (selection.lowerCase.checked) {
+    var minIndex = getRandomInt(alphabetCharacters.length - 1);
+    var singleIndex = alphabetCharacters[minIndex];
+      tempChoice.push(singleIndex);
+      finalLength = desiredLength - 1;
+  }
+  if (selection.upperCase.checked) {
+    var minIndex = getRandomInt(numericalCharacters.length - 1);
+    var singleIndex = numericalCharacters[minIndex]
+      tempChoice.push(singleIndex);
+      finalLength = desiredLength - 1;
+  }
+  if (selection.upperCase.checked) {
+    var minIndex = getRandomInt(specialCharacters.length - 1);
+    var singleIndex = specialCharacters[minIndex]
+      tempChoice.push(singleIndex);
+      finalLength = desiredLength - 1;
+  }
+
+
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   };
 
-  for (var i = 0; i < desiredLength; i++) {
-    choiceIndex = getRandomInt(userChoice.length - 1);
-    randomIndex = userChoice[choiceIndex];
+  for (var i = 0; i < finalLength; i++) {
+    var choiceIndex = getRandomInt(userChoice.length - 1);
+    var randomIndex = userChoice[choiceIndex];
       tempChoice.push(randomIndex);
   }
+
+  function shuffle(array) { // Fisher-Yates Javascirpt Shuffle - used on final array to randomise and create a strong password
+    let currentIndex = array.length,  randomIndex;
+  
+
+    while (currentIndex != 0) {
+  
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+  
+  shuffle(tempChoice);
 
   password = tempChoice.join('');
 

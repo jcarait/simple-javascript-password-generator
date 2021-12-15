@@ -1,0 +1,137 @@
+[33mcommit 6a40e1a56c7973aaea9df5e97d5fe8c3fa52e7db[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Thu Dec 16 01:15:37 2021 +1100
+
+    added console log for special checkbox, issue with password not generating at least 1 of each desired character
+
+[33mcommit 4fbac2177038ae53dc102b8a06b84e9ef1e199d4[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Thu Dec 16 01:10:50 2021 +1100
+
+    working password generator
+
+[33mcommit f37a1cc90d5f9e3ffac6c938bd3dd3e65f40f146[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Thu Dec 16 01:08:28 2021 +1100
+
+    successfully working random array
+
+[33mcommit 3ca066fb9b2efe8145b86f4ec4fae53ee41ef301[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Thu Dec 16 01:04:02 2021 +1100
+
+    setup algorithm to push values onto empty array
+
+[33mcommit c12ec9df8103b85015bdcb09790ffff3738854c9[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Thu Dec 16 00:41:12 2021 +1100
+
+    testing random index algo
+
+[33mcommit e9b2675bc2bebf1fc67aa7f1bc91b355fff2da85[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Wed Dec 15 23:41:14 2021 +1100
+
+    algo setup for array of characters based on userChoice
+
+[33mcommit 4d976eb8e1d9eb773baf68698e404800eb9d1e91[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Wed Dec 15 23:36:08 2021 +1100
+
+    fixed text for numerical checkbox, restructured algo for userChoices
+
+[33mcommit cde763a80c84d73cdb1f2c3a8235f39efad01293[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Wed Dec 15 23:22:24 2021 +1100
+
+    added js code for numerical checkbox option
+
+[33mcommit f5b2f4431a923588d75524341938db7aaaae5990[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Wed Dec 15 23:18:01 2021 +1100
+
+    WIP - creating algo and pushing values into an array
+
+[33mcommit 561e91f48355766483c334b06a1bd709d24f201a[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Tue Dec 14 20:06:22 2021 +1100
+
+    converting existing alphabet array to upper case and storing in separate var
+
+[33mcommit cca83367f5cc23511cd2156447dd65f711c173c3[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Tue Dec 14 19:36:04 2021 +1100
+
+    created alert which prompts user to select at least one checkbox for desired password
+
+[33mcommit 6677d33d06bdd922154bf37a8db628bb136807f0[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Tue Dec 14 00:12:32 2021 +1100
+
+    latest commit, work in progress
+
+[33mcommit 68715cf7ae4435c89a366ebe974360dd120d8fd4[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 23:26:52 2021 +1100
+
+    creating function to store user preference for password to be generated
+
+[33mcommit de93753f92421f723af337212e62c7d3186bb030[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 23:14:28 2021 +1100
+
+    created nested object to store user's preferred password combo
+
+[33mcommit 5db4e4923de5decba48ef258607feb152c08b96f[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 23:05:42 2021 +1100
+
+    added event listeners for slider and checkbox
+
+[33mcommit 5e49b81ee3458ca58f5aca5e9dd767169bbbe92d[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 21:18:10 2021 +1100
+
+    added remaining categories for password criteria and comments to js code
+
+[33mcommit 8b79df613b0ccbd1d8b3314c4fe6cc0c7d11962d[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 20:43:56 2021 +1100
+
+    added checkbox to prompts
+
+[33mcommit ca73362f9b2bcfbbfa8bab60d7e841d6d0095dde[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 20:13:09 2021 +1100
+
+    added html card which will contain prompts for user's password criteria. added javascript function to display value of password slider length
+
+[33mcommit 50095d79d3686889151e2880fe9f0ad6b15d2a96[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 19:43:40 2021 +1100
+
+    no change
+
+[33mcommit 4d1c488ddb46314b22c25718580c91833ab8102e[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 19:38:35 2021 +1100
+
+    added array for special chars
+
+[33mcommit bb995ff83cca75dacf09d83d5cea58d95b5eb0ea[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 19:25:11 2021 +1100
+
+    changed lowerCase to 'letters', added numbers array
+
+[33mcommit 13a0f7cc1ee970c6e0d12976d09c68a3fa4b4d06[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 19:23:04 2021 +1100
+
+    added lowerCase array
+
+[33mcommit da34e00c2b1b0cbbf2de6cae2c6d1f9a7e87b381[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Jonathan F-Carait <jonathan.carait@outlook.com>
+Date:   Mon Dec 13 19:19:08 2021 +1100
+
+    first commit
