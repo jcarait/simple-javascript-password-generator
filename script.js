@@ -80,19 +80,19 @@ function generatePassword() {
     console.log("Generating Password");
   }
 
-  if (selection.upperCase.checked && !selection.lowerCase.checked && !selection.special.checked) {
+  if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked && selection.special.checked) {
 
-    userChoice.push(upperCaseAlpabetCharacters);
+    userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters, specialCharacters);
     console.log(userChoice);
-  } else if (!selection.upperCase.checked && selection.lowerCase.checked && !selection.special.checked) {
+  } else if (!selection.upperCase.checked && selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
 
     userChoice.push(alphabetCharacters);
     console.log(userChoice);
-  } else if (!selection.upperCase.checked && !selection.lowerCase.checked && selection.special.checked) {
+  } else if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && selection.special.checked) {
 
     userChoice.push(specialCharacters);
     console.log(userChoice);
-  } else if (selection.upperCase.checked && selection.lowerCase.checked && !selection.special.checked) {
+  } else if (selection.upperCase.checked && selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
 
     userChoice.push(alphabetCharacters, upperCaseAlpabetCharacters);
     console.log(userChoice);
