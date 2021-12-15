@@ -64,7 +64,7 @@ var selection = {
   lowerCase: checkLowerCase,
   numerical: checkNumerical,
   special: checkSpecial
-}
+};
 
 
 
@@ -103,8 +103,18 @@ function generatePassword() {
   } else {
     userChoice = specialCharacters;
     console.log(userChoice);
-  }
+  };
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  };
+
+  choiceIndex = getRandomInt(userChoice.length - 1);
+  randomSelection = userChoice[choiceIndex];
+
+  return randomSelection;
 }
+
 
 
 
