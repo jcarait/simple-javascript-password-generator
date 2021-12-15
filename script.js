@@ -24,6 +24,7 @@ var current = function () {
 
 slider.addEventListener("input", current);
 
+
 checkUpperCase.addEventListener("change", function () {
   if (this.checked) {
     console.log("Upper case is checked");
@@ -56,10 +57,9 @@ checkSpecial.addEventListener("change", function () {
   }
 });
 
-var length = parseInt(slider.value); //store current desired password length based on slider position.
+var desiredLength = parseInt(slider.value); //store current desired password length based on slider position.
 
 var selection = {
-  length: parseInt(slider.value),
   upperCase: checkUpperCase,
   lowerCase: checkLowerCase,
   numerical: checkNumerical,
@@ -71,8 +71,10 @@ var selection = {
 console.log(selection);
 
 function generatePassword() {
-  var userChoice = [];
+  var userChoice
+  var tempChoice = [];
   var output = "";
+  var desiredLength = parseInt(slider.value); 
 
   if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
@@ -110,9 +112,14 @@ function generatePassword() {
   };
 
   choiceIndex = getRandomInt(userChoice.length - 1);
-  randomSelection = userChoice[choiceIndex];
+  
 
-  return randomSelection;
+  for (var i = 0; i < desiredLength; i++) {
+    randomIndex = userChoice[choiceIndex];
+      tempChoice.push(randomIndex);
+  }
+
+  console.log(tempChoice);
 }
 
 
