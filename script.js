@@ -71,7 +71,7 @@ function generatePassword() {
     finalLength = desiredLength - 2;
   } else if (selection.lowerCase.checked && selection.numerical.checked) {
 
-    userChoice = AlpabetCharacters.concat(alphabetCharacters);
+    userChoice = alphabetCharacters.concat(numericalCharacters);
     finalLength = desiredLength - 2;
   } else if (selection.lowerCase.checked && selection.special.checked) {
 
