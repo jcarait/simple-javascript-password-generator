@@ -49,9 +49,37 @@ function generatePassword() {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters);
     finalLength = desiredLength - 3;
+  } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.special.checked) {
+
+    userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, specialCharacters);
+    finalLength = desiredLength - 3;
+  } else if (selection.special.checked && selection.lowerCase.checked && selection.numerical.checked) {
+
+    userChoice = specialCharacters.concat(alphabetCharacters, numericalCharacters);
+    finalLength = desiredLength - 3;
   } else if (selection.upperCase.checked && selection.lowerCase.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters);
+    finalLength = desiredLength - 2;
+  } else if (selection.upperCase.checked && selection.numerical.checked) {
+
+    userChoice = upperCaseAlpabetCharacters.concat(numericalCharacters);
+    finalLength = desiredLength - 2;
+  } else if (selection.upperCase.checked && selection.special.checked) {
+
+    userChoice = upperCaseAlpabetCharacters.concat(specialCharacters);
+    finalLength = desiredLength - 2;
+  } else if (selection.lowerCase.checked && selection.numerical.checked) {
+
+    userChoice = AlpabetCharacters.concat(alphabetCharacters);
+    finalLength = desiredLength - 2;
+  } else if (selection.lowerCase.checked && selection.special.checked) {
+
+    userChoice = alphabetCharacters.concat(specialCharacters);
+    finalLength = desiredLength - 2;
+  } else if (selection.numerical.checked && selection.special.checked) {
+
+    userChoice = numericalCharacters.concat(specialCharacters);
     finalLength = desiredLength - 2;
   } else if (selection.upperCase.checked) {
 
