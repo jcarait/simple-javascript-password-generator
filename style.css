@@ -101,7 +101,7 @@ button[disabled] {
   width: 100%; /* Width of the outside container */
 }
 
-/* The slider itself */
+/* Basic slider - from w3schools */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;

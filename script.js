@@ -22,7 +22,7 @@ var current = function () {
 
 slider.addEventListener("input", current);
 
-var desiredLength = parseInt(slider.value); //store current desired password length based on slider position.
+var desiredLength = parseInt(slider.value); //convert string value to integer and store based on slider position.
 
 var selection = {
   upperCase: checkUpperCase,
@@ -38,13 +38,13 @@ function generatePassword() {
   var finalLength
 
 
-//Included a reduction to length of password since one of each criteria will be added to final array of characters
+
   if (!selection.upperCase.checked && !selection.lowerCase.checked && !selection.numerical.checked && !selection.special.checked) {
     alert("Please select at least one checkbox to generate password");
   } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked && selection.special.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters, specialCharacters);
-    finalLength = desiredLength - 4; 
+    finalLength = desiredLength - 4; //Included a reduction to length of password since one of each desired criteria will be added to final array of characters
   } else if (selection.upperCase.checked && selection.lowerCase.checked && selection.numerical.checked) {
 
     userChoice = upperCaseAlpabetCharacters.concat(alphabetCharacters, numericalCharacters);
@@ -107,7 +107,7 @@ function generatePassword() {
     tempChoice.push(randomIndex);
   }
 
- // Fisher-Yates Javascirpt Shuffle - used on final array to randomise and create a strong password
+  // Fisher-Yates Javascirpt Shuffle - used on final array to randomise and create a strong password
   function shuffle(array) {
     let currentIndex = array.length, randomIndex;
 
